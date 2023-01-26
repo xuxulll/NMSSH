@@ -61,6 +61,7 @@
 		18F1A2D218158D78000635AB /* NMSSHLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = 18F1A2D018158D78000635AB /* NMSSHLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		18F1A2D318158D78000635AB /* NMSSHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1A2D118158D78000635AB /* NMSSHLogger.m */; };
 		94A96C912982E56900F34EB2 /* CSSH in Frameworks */ = {isa = PBXBuildFile; productRef = 94A96C902982E56900F34EB2 /* CSSH */; };
+		94DFD0872982F96000021628 /* NMSSH.h in Headers */ = {isa = PBXBuildFile; fileRef = 18A0966C17D6AA51008B76FB /* NMSSH.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46F9E21188AC7010056E5DB /* NMSFTPFile.h in Headers */ = {isa = PBXBuildFile; fileRef = E46F9E1F188AC7010056E5DB /* NMSFTPFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46F9E22188AC7010056E5DB /* NMSFTPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E46F9E20188AC7010056E5DB /* NMSFTPFile.m */; };
 /* End PBXBuildFile section */
@@ -217,6 +218,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				94DFD0872982F96000021628 /* NMSSH.h in Headers */,
 				186CC9751B69125400F674C4 /* NMSSHChannel.h in Headers */,
 				186CC9761B69125400F674C4 /* NMSFTP.h in Headers */,
 				186CC9771B69125400F674C4 /* NMSFTPFile.h in Headers */,
@@ -446,9 +448,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.ninemuses.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -490,9 +490,7 @@
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "se.ninemuses.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -605,9 +603,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = "";
@@ -630,9 +626,7 @@
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				INFOPLIST_FILE = "";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
-				LIBRARY_SEARCH_PATHS = (
-					"$(inherited)",
-				);
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
 				LINK_WITH_STANDARD_LIBRARIES = NO;
 				MACH_O_TYPE = mh_object;
 				MACOSX_DEPLOYMENT_TARGET = "";
