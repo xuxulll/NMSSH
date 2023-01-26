@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "libssh2prebuild",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/DimaRU/Libssh2Prebuild",
+      "state" : {
+        "branch" : "master",
+        "revision" : "a91bcf205a6cbc84144f840c44145656abbd266a"
+      }
+    }
+  ],
+  "version" : 2
+}
