@@ -136,6 +136,14 @@
              withDestinationPath:(nonnull NSString *)destPath;
 
 /**
+ Get the real path for a symbolic link
+
+ @param path An existing symlink path
+ @returns Real path
+*/
+- (nullable NSString *)resolveSymbolicLinkAtPath:(nonnull NSString *)path;
+
+/**
  Remove file at path
 
  @param path Path to existing file

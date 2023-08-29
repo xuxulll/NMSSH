@@ -226,6 +226,17 @@
     return rc == 0;
 }
 
+- (nullable NSString *)resolveSymbolicLinkAtPath:(NSString *)path {
+    char buffer[512];
+    int rc = libssh2_sftp_realpath(self.sftpSession, [path UTF8String], buffer, sizeof(buffer));
+    if (rc < 0){
+        NMSSHLogError(@"Unable to obtain real path of %@", path);
+        return NULL;
+    }
+    NSString *result = [[NSString alloc] initWithBytes:buffer length:rc encoding:NSUTF8StringEncoding];
+    return result;
+}
+
 - (BOOL)removeFileAtPath:(NSString *)path {
     return libssh2_sftp_unlink(self.sftpSession, [path UTF8String]) == 0;
 }
