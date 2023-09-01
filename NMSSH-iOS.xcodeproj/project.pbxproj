@@ -62,6 +62,8 @@
 		18F1A2D318158D78000635AB /* NMSSHLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 18F1A2D118158D78000635AB /* NMSSHLogger.m */; };
 		94A96C912982E56900F34EB2 /* CSSH in Frameworks */ = {isa = PBXBuildFile; productRef = 94A96C902982E56900F34EB2 /* CSSH */; };
 		94DFD0872982F96000021628 /* NMSSH.h in Headers */ = {isa = PBXBuildFile; fileRef = 18A0966C17D6AA51008B76FB /* NMSSH.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		9FC7B50C2A9F2A0100347393 /* NMSSHSocketDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC7B50B2A9F2A0100347393 /* NMSSHSocketDelegate.h */; };
+		9FC7B50D2A9F2A0100347393 /* NMSSHSocketDelegate.h in Headers */ = {isa = PBXBuildFile; fileRef = 9FC7B50B2A9F2A0100347393 /* NMSSHSocketDelegate.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46F9E21188AC7010056E5DB /* NMSFTPFile.h in Headers */ = {isa = PBXBuildFile; fileRef = E46F9E1F188AC7010056E5DB /* NMSFTPFile.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E46F9E22188AC7010056E5DB /* NMSFTPFile.m in Sources */ = {isa = PBXBuildFile; fileRef = E46F9E20188AC7010056E5DB /* NMSFTPFile.m */; };
 /* End PBXBuildFile section */
@@ -91,6 +93,7 @@
 		18B4FE82188C8195004E05FF /* NMSSH+Protected.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NMSSH+Protected.h"; sourceTree = "<group>"; };
 		18F1A2D018158D78000635AB /* NMSSHLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSSHLogger.h; sourceTree = "<group>"; };
 		18F1A2D118158D78000635AB /* NMSSHLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSSHLogger.m; sourceTree = "<group>"; };
+		9FC7B50B2A9F2A0100347393 /* NMSSHSocketDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSSHSocketDelegate.h; sourceTree = "<group>"; };
 		E46F9E1F188AC7010056E5DB /* NMSFTPFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NMSFTPFile.h; sourceTree = "<group>"; };
 		E46F9E20188AC7010056E5DB /* NMSFTPFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NMSFTPFile.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -207,6 +210,7 @@
 			children = (
 				18A0967917D6AA64008B76FB /* NMSSHChannelDelegate.h */,
 				18A0967A17D6AA64008B76FB /* NMSSHSessionDelegate.h */,
+				9FC7B50B2A9F2A0100347393 /* NMSSHSocketDelegate.h */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -226,6 +230,7 @@
 				186CC9791B69125400F674C4 /* NMSSHConfig.h in Headers */,
 				186CC97A1B69125400F674C4 /* NMSSHHostConfig.h in Headers */,
 				186CC97D1B69125500F674C4 /* NMSSHChannelDelegate.h in Headers */,
+				9FC7B50D2A9F2A0100347393 /* NMSSHSocketDelegate.h in Headers */,
 				186CC97E1B69125500F674C4 /* NMSSHSessionDelegate.h in Headers */,
 				186CC9801B69125500F674C4 /* NMSSHLogger.h in Headers */,
 				186CC97F1B69125500F674C4 /* socket_helper.h in Headers */,
@@ -245,6 +250,7 @@
 				18A0967B17D6AA64008B76FB /* NMSSHChannelDelegate.h in Headers */,
 				18A0967C17D6AA64008B76FB /* NMSSHSessionDelegate.h in Headers */,
 				18A197C4191FA77A0004D88E /* NMSSHConfig.h in Headers */,
+				9FC7B50C2A9F2A0100347393 /* NMSSHSocketDelegate.h in Headers */,
 				18F1A2D218158D78000635AB /* NMSSHLogger.h in Headers */,
 				18A197C6191FA77A0004D88E /* NMSSHHostConfig.h in Headers */,
 				18B4FE83188C8774004E05FF /* NMSSH+Protected.h in Headers */,

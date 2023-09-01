@@ -2,6 +2,7 @@
 
 @class NMSSHSession;
 @protocol NMSSHChannelDelegate;
+@protocol NMSSHSocketDelegate;
 
 typedef NS_ENUM(NSInteger, NMSSHChannelError) {
     NMSSHChannelExecutionError,
@@ -11,7 +12,8 @@ typedef NS_ENUM(NSInteger, NMSSHChannelError) {
     NMSSHChannelAllocationError,
     NMSSHChannelRequestShellError,
     NMSSHChannelWriteError,
-    NMSSHChannelReadError
+    NMSSHChannelReadError,
+    NMSSHChannelSocketError
 };
 
 typedef NS_ENUM(NSInteger, NMSSHChannelPtyTerminal) {
@@ -28,7 +30,8 @@ typedef NS_ENUM(NSInteger, NMSSHChannelType)  {
     NMSSHChannelTypeExec,
     NMSSHChannelTypeShell,
     NMSSHChannelTypeSCP,
-    NMSSHChannelTypeSubsystem // Not supported by NMSSH framework
+    NMSSHChannelTypeSubsystem, // Not supported by NMSSH framework
+    NMSSHChannelTypeDirect
 };
 
 /**
@@ -52,6 +55,13 @@ typedef NS_ENUM(NSInteger, NMSSHChannelType)  {
  You can use the `delegate` to receive asynchronous read from a shell.
  */
 @property (nonatomic, nullable, weak) id<NMSSHChannelDelegate> delegate;
+
+/**
+ The receiver’s `delegate`.
+
+ You can use the `delegate` to receive socket status updates.
+ */
+@property (nonatomic, nullable, weak) id<NMSSHSocketDelegate> socketDelegate;
 
 /// ----------------------------------------------------------------------------
 /// @name Initializer
@@ -250,5 +260,19 @@ typedef NS_ENUM(NSInteger, NMSSHChannelType)  {
                 to:(nonnull NSString *)remotePath
           progress:(BOOL (^_Nullable)(NSUInteger))progress;
 
+/**
+ Initialise a libssh2 socket for port-forwarding
+ 
+ @returns The created NMSSHSocket
+ */
++ (struct NMSSHSocket)createSocket;
+
+/**
+ Bind a local port and forward any connection to the remote host.
+ 
+ @returns Local port bind success
+ */
+- (BOOL)bindLocalPortToRemoteHostWithSocket:(struct NMSSHSocket)sock localListenIP:(nonnull NSString *)localListenIP localPort:(NSInteger)localPort host:(nonnull NSString *)remoteHost port:(NSInteger)remotePort in:(dispatch_queue_t _Nonnull )queue error:(NSError * _Nullable * _Nullable)error;
 
 @end
+

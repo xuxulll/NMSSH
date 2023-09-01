@@ -8,6 +8,7 @@
 
 #import "NMSSHSessionDelegate.h"
 #import "NMSSHChannelDelegate.h"
+#import "NMSSHSocketDelegate.h"
 
 #import "NMSSHSession.h"
 #import "NMSSHChannel.h"
