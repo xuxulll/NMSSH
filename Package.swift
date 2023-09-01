@@ -13,13 +13,18 @@ let package = Package(
     ],
     dependencies: [
         // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(url: "https://github.com/DimaRU/Libssh2Prebuild.git", .branch("master"))
     ],
 	targets: [
- 		.binaryTarget(
- 			name: "NMSSH",
- 			url: "https://github.com/thebaselab/NMSSH/releases/download/2.3.1p/NMSSH.xcframework.zip",
- 			checksum: "d768f895b40136613cf4e424060c42052eb6206d3e0fd80c5421c89af205b70d"
- 		),
+        .target(
+            name: "NMSSH",
+            dependencies: [.product(name: "CSSH", package: "Libssh2Prebuild")],
+            path: "NMSSH",
+            cSettings: [
+                .headerSearchPath("."),
+                .headerSearchPath("Protocols"),
+                .headerSearchPath("Config")
+            ]
+       )
  	]
 )
