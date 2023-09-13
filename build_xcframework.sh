@@ -36,7 +36,7 @@ xcodebuild archive -project "$PROJECT_IOS" -scheme 'NMSSH' -configuration Releas
 # xcodebuild archive -project "$PROJECT_IOS" -scheme 'NMSSH' -configuration Release -destination 'generic/platform=macOS,arch=x86_64h' -archivePath "$CATALYST_ARCHIVE" SKIP_INSTALL=NO
 
 # Mac slice.
-xcodebuild archive -project "$WORKSPACE" -scheme 'NMSSH' -configuration Release -destination 'platform=macOS' -archivePath "$MAC_ARCHIVE" SKIP_INSTALL=NO
+xcodebuild archive -project "$PROJECT_IOS" -scheme 'NMSSH' -configuration Release -destination 'platform=macOS' -archivePath "$MAC_ARCHIVE" SKIP_INSTALL=NO
 
 # Create the XCFramework
 xcodebuild -create-xcframework \
@@ -44,6 +44,8 @@ xcodebuild -create-xcframework \
 	-debug-symbols "$PWD/$DEVICE_ARCHIVE/$DSYM_SUBPATH" \
     -framework "$SIMULATOR_ARCHIVE/$FRAMEWORK_SUBPATH" \
     -debug-symbols "$PWD/$SIMULATOR_ARCHIVE/$DSYM_SUBPATH" \
+    -framework "$MAC_ARCHIVE/$FRAMEWORK_SUBPATH" \
+    -debug-symbols "$PWD/$MAC_ARCHIVE/$DSYM_SUBPATH" \
 	-output "$XCFRAMEWORK_PATH"
 
 
